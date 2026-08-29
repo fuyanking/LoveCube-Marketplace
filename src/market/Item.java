@@ -1,16 +1,18 @@
+package market;
+
 public class Item {
     private String name;
     private int itemId;
     private int quantity;
     private double price;
-    private String type;
+    private String category;
 
-    public Item(String name, int itemId, int quantity, double price, String type) {
+    public Item(String name, int itemId, int quantity, double price, String category) {
         this.name = name;
         this.itemId = itemId;
         this.quantity = quantity;
         this.price = price;
-        this.type = type;
+        this.category = category;
     }
 
     public String getName() {
@@ -29,8 +31,8 @@ public class Item {
         return price;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
     public void setQuantity(int quantity) {
@@ -40,7 +42,6 @@ public class Item {
     }
 
     public String getInfo() {
-        return itemId + ": " + name + " (" + type + "), $" + price
-                + ", quantity: " + quantity;
+        return itemId + ": " + name + " (" + category + "), $" + price + ", stock: " + quantity;
     }
 }

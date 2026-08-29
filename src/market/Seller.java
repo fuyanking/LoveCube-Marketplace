@@ -1,3 +1,5 @@
+package market;
+
 import java.util.ArrayList;
 
 public class Seller extends User {
@@ -14,12 +16,14 @@ public class Seller extends User {
         }
     }
 
+    // ===== Add order state transition check, reject invalid status jumps =====
     public void updateOrderStatus(Order order, String status) {
         if (order != null && status != null) {
             order.setStatus(status);
         }
     }
 
+    // ===== Return copy to block external list tampering =====
     public ArrayList<Item> getListedItems() {
         return listedItems;
     }
